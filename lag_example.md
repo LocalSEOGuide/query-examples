@@ -33,6 +33,7 @@ SELECT
    Impressions - LAG(Impressions, 1) OVER (PARTITION BY category ORDER BY date ASC),
    LAG(Impressions, 1) OVER (PARTITION BY category ORDER BY date ASC)
    )  as MoM_imp_perc_change,
+
  SAFE_DIVIDE (
    Impressions - LAG(Impressions, 12) OVER (PARTITION BY category ORDER BY date ASC),
    LAG(Impressions, 12) OVER (PARTITION BY category ORDER BY date ASC)
